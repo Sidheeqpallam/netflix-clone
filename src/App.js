@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Banner from './component/Banner/Banner';
+import NavBar from './component/NavBar/NavBar';
+import {originals, action} from './constants/urls'
+import RowPost from './component/RowPost/RowPost';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar/>
+      <Banner/>
+      <RowPost url={originals} title='Netfix Originals' />
+      <RowPost  url={action} title='Action' isSmall/>
     </div>
   );
 }
